@@ -18,7 +18,7 @@ st.write("Explore o mapa do campus para encontrar locais importantes.")
 
 salas = gpd.read_file("Mapa/salas_1.geojson")
 rotas = gpd.read_file("Mapa/rotas.geojson")
-floor_1 = gpd.read_file("Mapa\\floor_1_unido.geojson")
+# floor_1 = gpd.read_file("Mapa\\floor_1_unido.geojson")
 # rotas_acessiveis = gpd.read_file("Mapa/rotas.geojson")
 floor_1 = gpd.read_file("Mapa/floor_1_unido.geojson")
 
