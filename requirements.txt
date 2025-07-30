@@ -5,4 +5,4 @@ folium
 streamlit==1.27.2
 streamlit-folium
 geopandas==0.13.2
-request
+requests
