@@ -57,7 +57,16 @@ col1, col2 = st.columns([3, 1])
 
 with col2:
     #nomes_salas = sorted(salas["nome"].dropna().unique())
-    nomes_salas = sorted(salas["features"]["properties"]["nome"].dropna().unique())
+    # Extrai os nomes das salas a partir das propriedades
+    nomes_salas = sorted(
+        list(
+            set(
+                feature["properties"].get("nome")
+                for feature in salas["features"]
+                if feature["properties"].get("nome")  # ignora valores None ou vazios
+            )
+        )
+    )
     sala_escolhida = st.selectbox("PESQUISA LOCAL:", nomes_salas, placeholder="Digite ou selecione o local..." )
     acessibilidade = st.checkbox("Preciso de acessibilidade")
     mostrar_rota = st.button("Como chegar?")
