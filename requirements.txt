@@ -1,10 +1,7 @@
 numpy
-altair
 pandas
+altair
 folium
 streamlit==1.27.2
 streamlit-folium
 geopandas==0.13.2
-pyproj==3.5.0
-shapely==2.0.2
-requests
