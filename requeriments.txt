@@ -1,8 +1,12 @@
-streamlit==1.27.2  # currently pinned to this version
 numpy
 altair
 pandas
 folium
+streamlit==1.27.2
 streamlit-folium
-geopandas
+geopandas==0.13.2
+fiona==1.9.5
+pyproj==3.5.0
+shapely==2.0.2
+gdal==3.6.2
 requests
