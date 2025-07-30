@@ -1,6 +1,6 @@
 import streamlit as st
 import modulo_web as mw
-import streamlit-folium as st_fol
+import streamlit_folium as st_fol
 import geopandas as gpd
 import folium as fol
 import mapas
