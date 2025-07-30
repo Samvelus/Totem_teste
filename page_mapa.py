@@ -53,7 +53,7 @@ tiles_dict = {
 
 
 # Interface lateral
-col1, col2 = st.columns([3, 1], border=True)
+col1, col2 = st.columns([3, 1])
 
 with col2:
     nomes_salas = sorted(salas["nome"].dropna().unique())
