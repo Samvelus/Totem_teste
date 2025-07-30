@@ -1,5 +1,4 @@
 import streamlit as st
-import geopandas as gpd
 import modulo_web as mw
 import streamlit_folium as st_fol
 import folium as fol
