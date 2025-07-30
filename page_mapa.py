@@ -80,7 +80,7 @@ with col2:
 tile_escolhido = tiles_dict.get(tile_escolhido, "CartoDB Positron")
 # Define centro do mapa: se sala for escolhida, centraliza nela
 if sala_escolhida:
-    sala_alvo = list(set(feature["properties"].get("nome") == sala_escolhida))
+    sala_alvo = list(set(feature["properties"].get("nome") == sala_escolhida))for feature in salas["features"]
     if not sala_alvo.empty:
         centro = sala_alvo.geometry.unary_union.centroid
         centro_mapa = [centro.y, centro.x]
