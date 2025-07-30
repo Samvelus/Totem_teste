@@ -3,6 +3,5 @@ numpy
 altair
 pandas
 streamlit-folium
-streamlit-folium
-requests
 geopandas
+requests
