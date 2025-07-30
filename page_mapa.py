@@ -1,6 +1,7 @@
 import streamlit as st
 import modulo_web as mw
 import streamlit_folium as st_fol
+import geopandas as gpd
 import folium as fol
 import mapas
 import time
@@ -15,15 +16,21 @@ st.write("Explore o mapa do campus para encontrar locais importantes.")
 
 # ==== Carregar dados ====
 
+salas = gpd.read_file("Mapa/salas_1.geojson")
+rotas = gpd.read_file("Mapa/rotas.geojson")
+floor_1 = gpd.read_file("Mapa\\floor_1_unido.geojson")
+# rotas_acessiveis = gpd.read_file("Mapa/rotas.geojson")
+floor_1 = gpd.read_file("Mapa/floor_1_unido.geojson")
+
 # Abrir os arquivos GeoJSON como dicionários Python
-with open("Mapa/salas_1.geojson", "r", encoding="utf-8") as f:
-    salas = json.load(f)
+# with open("Mapa/salas_1.geojson", "r", encoding="utf-8") as f:
+#     salas = json.load(f)
 
-with open("Mapa/rotas.geojson", "r", encoding="utf-8") as f:
-    rotas = json.load(f)
+# with open("Mapa/rotas.geojson", "r", encoding="utf-8") as f:
+#     rotas = json.load(f)
 
-with open("Mapa/floor_1_unido.geojson", "r", encoding="utf-8") as f:
-    floor_1 = json.load(f)
+# with open("Mapa/floor_1_unido.geojson", "r", encoding="utf-8") as f:
+#     floor_1 = json.load(f)
 
 # === Corrigir colunas com Timestamp (converter para string) ===
 # for gdf in [salas, rotas_normais, rotas_acessiveis, floor_1]:
