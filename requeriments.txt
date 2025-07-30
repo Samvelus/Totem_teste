@@ -1,6 +1,7 @@
 numpy
 altair
 pandas
+json
 folium
 streamlit==1.27.2
 streamlit-folium
