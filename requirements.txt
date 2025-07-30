@@ -4,5 +4,6 @@ altair
 folium
 streamlit==1.27.2
 streamlit-folium
+fiona==1.9.5
 geopandas==0.13.2
 requests
