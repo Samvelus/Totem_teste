@@ -19,19 +19,19 @@ st.write("Explore o mapa do campus para encontrar locais importantes.")
 salas = gpd.read_file("Mapa/salas_1.geojson")
 rotas = gpd.read_file("Mapa/rotas.geojson")
 floor_1 = gpd.read_file("Mapa/floor_1_unido.geojson")
-floor_1 = gpd.read_file("Mapa\\floor_1_unido.geojson")
-rotas_acessiveis = gpd.read_file("Mapa/rotas.geojson")
+# floor_1 = gpd.read_file("Mapa\\floor_1_unido.geojson")
+# rotas_acessiveis = gpd.read_file("Mapa/rotas.geojson")
 
 
 # Abrir os arquivos GeoJSON como dicionários Python
-# with open("Mapa/salas_1.geojson", "r", encoding="utf-8") as f:
-#     salas = json.load(f)
+with open("Mapa/salas_1.geojson", "r", encoding="utf-8") as f:
+    salas = json.load(f)
 
-# with open("Mapa/rotas.geojson", "r", encoding="utf-8") as f:
-#     rotas = json.load(f)
+with open("Mapa/rotas.geojson", "r", encoding="utf-8") as f:
+    rotas = json.load(f)
 
-# with open("Mapa/floor_1_unido.geojson", "r", encoding="utf-8") as f:
-#     floor_1 = json.load(f)
+with open("Mapa/floor_1_unido.geojson", "r", encoding="utf-8") as f:
+    floor_1 = json.load(f)
 
 # === Corrigir colunas com Timestamp (converter para string) ===
 # for gdf in [salas, rotas_normais, rotas_acessiveis, floor_1]:
@@ -56,7 +56,8 @@ tiles_dict = {
 col1, col2 = st.columns([3, 1])
 
 with col2:
-    nomes_salas = sorted(salas["nome"].dropna().unique())
+    #nomes_salas = sorted(salas["nome"].dropna().unique())
+    nomes_salas = sorted(salas["features"][i]["properties"]["nome"].dropna().unique())
     sala_escolhida = st.selectbox("PESQUISA LOCAL:", nomes_salas, placeholder="Digite ou selecione o local..." )
     acessibilidade = st.checkbox("Preciso de acessibilidade")
     mostrar_rota = st.button("Como chegar?")
